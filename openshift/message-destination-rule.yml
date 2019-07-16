@@ -1,0 +1,14 @@
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: DestinationRule
+metadata:
+  name: message
+spec:
+  host: message
+  subsets:
+  - labels:
+      app: "message-v1"
+    name: "v1"
+  - labels:
+      app: "message-v2"
+    name: "v2"
