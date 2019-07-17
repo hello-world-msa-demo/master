@@ -12,3 +12,6 @@ spec:
   - labels:
       app: "message-v2"
     name: "v2"
+  - labels:
+      app: "file-message-service"
+    name: "v3"
