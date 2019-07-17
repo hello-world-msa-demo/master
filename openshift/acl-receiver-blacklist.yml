@@ -19,7 +19,7 @@ kind: rule
 metadata:
   name: denyreceiver
 spec:
-  match: destination.labels["app"] == "message-v1" && source.labels["app"]=="receiver-a"
+  match: destination.labels["app"] == "message-v2" && source.labels["app"]=="receiver-a"
   actions:
   - handler: denyreceiverhandler.denier
     instances: [ denyreceiverrequests.checknothing ]
