@@ -31,6 +31,8 @@ spec:
       uri: /
     route:
     - destination:
-        port:
-          number: 8080
-        host: receiver
+        host: receiver-a
+      weight: 100
+    - destination:
+        host: receiver-b
+      weight: 0
