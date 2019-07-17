@@ -10,7 +10,7 @@ spec:
   - route:
     - destination:
         host: receiver-a
-      weight: 50
+      weight: 100
     - destination:
-        host: eceiver-b
-      weight: 50
+        host: receiver-b
+      weight: 0
