@@ -24,7 +24,12 @@ spec:
   gateways:
   - istio-gateway
   http:
-  - route:
+  - match:
+    - uri:
+        prefix: /receiver
+    rewrite:
+      uri: /
+    route:
     - destination:
         port:
           number: 8080
