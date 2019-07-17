@@ -19,8 +19,8 @@ spec:
     - destination:
         host: message
         subset: v1
-      weight: 75
+      weight: 0
     - destination:
         host: message
         subset: v2
-      weight: 25
+      weight: 100
