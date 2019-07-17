@@ -1,0 +1,25 @@
+---
+apiVersion: "config.istio.io/v1alpha2"
+kind: denier
+metadata:
+  name: denyreceiverhandler
+spec:
+  status:
+    code: 7
+    message: Not allowed
+---
+apiVersion: "config.istio.io/v1alpha2"
+kind: checknothing
+metadata:
+  name: denyreceiverrequests
+spec:
+---
+apiVersion: "config.istio.io/v1alpha2"
+kind: rule
+metadata:
+  name: denyreceiver
+spec:
+  match: destination.labels["app"] == "message-v1" && source.labels["app"]=="receiver-a"
+  actions:
+  - handler: denyreceiverhandler.denier
+    instances: [ denyreceiverrequests.checknothing ]

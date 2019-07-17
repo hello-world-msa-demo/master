@@ -1,0 +1,14 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: receiver
+  labels:
+    app: receiver
+    module: receiver
+spec:
+  ports:
+  - port: 8080
+    name: http
+  selector:
+    module: receiver

@@ -13,3 +13,19 @@ spec:
       protocol: HTTP
     hosts:
     - "*"
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: receiver-gateway
+spec:
+  hosts:
+  - "*"
+  gateways:
+  - istio-gateway
+  http:
+  - route:
+    - destination:
+        port:
+          number: 8080
+        host: receiver
